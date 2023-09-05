@@ -1,0 +1,31 @@
+
+ion-header{
+    background-color: #8C1414;
+    color:white;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+
+p{
+    font-size: 15px;
+}
+
+
+ion-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+ion-icon{
+    border: #dad6d6  solid 1px;
+    border-radius: 50%;
+    padding: 15px;
+    background-color:#dad6d6;
+    color:#8C1414;
+}
