@@ -1,0 +1,40 @@
+h2{
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #8C1414;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #8C1414;
+}
+
+
+ion-icon{
+    font-size: 80px;
+}
+
+ion-item{
+    padding: 10px;
+}
+
+.icone-voltar{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.titulo-user{
+    color: #8C1414;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.atributos-user{
+    color: #8C1414;
+    padding: 5px;
+}
