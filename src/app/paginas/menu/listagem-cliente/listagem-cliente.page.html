@@ -1,0 +1,24 @@
+
+<ion-content [fullscreen]="true">
+ 
+
+      <ion-header>
+          <ion-title>Listagem Clientes</ion-title>
+      </ion-header>
+
+           <ion-list>
+            <ion-item button *ngFor="let cliente of clientes">  
+            <ion-label>
+                 <h2><strong class="titulo">0{{cliente.id}}</strong> {{cliente.nome}}</h2>
+                <p><strong>E-mail:</strong> {{cliente.email}}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+
+        <ion-button expand="block" (click)="voltar()">Voltar</ion-button>
+ 
+</ion-content>
+
+   
+   
+   
