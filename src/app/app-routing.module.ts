@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'listagem-cliente',
     loadChildren: () => import('./paginas/menu/listagem-cliente/listagem-cliente.module').then( m => m.ListagemClientePageModule)
+  },
+  {
+    path: 'cartao-listagem-os',
+    loadChildren: () => import('./paginas/home/cartao-listagem-os/cartao-listagem-os.module').then( m => m.CartaoListagemOsPageModule)
   }
 
 

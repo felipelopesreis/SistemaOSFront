@@ -29,6 +29,6 @@ export class ListagemClientePage implements OnInit {
 }
 
   ngOnInit() {
+  
   }
-
 }
