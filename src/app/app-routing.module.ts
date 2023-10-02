@@ -11,10 +11,13 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/login/login.module').then( m => m.LoginPageModule)
   },
   
+  
   {
-    path: 'cadastro-cliente',
+    path: 'cadastro-cliente/:id',
     loadChildren: () => import('./paginas/menu/cadastro-cliente/cadastro-cliente.module').then( m => m.CadastroClientePageModule)
-  },  {
+  },
+ 
+  {
     path: 'cadastro-os',
     loadChildren: () => import('./paginas/menu/cadastro-os/cadastro-os.module').then( m => m.CadastroOsPageModule)
   },
@@ -25,6 +28,10 @@ const routes: Routes = [
   {
     path: 'cartao-listagem-os',
     loadChildren: () => import('./paginas/home/cartao-listagem-os/cartao-listagem-os.module').then( m => m.CartaoListagemOsPageModule)
+  },
+  {
+    path: 'tecnicos-atendimento',
+    loadChildren: () => import('./paginas/home/tecnicos-atendimento/tecnicos-atendimento.module').then( m => m.TecnicosAtendimentoPageModule)
   }
 
 

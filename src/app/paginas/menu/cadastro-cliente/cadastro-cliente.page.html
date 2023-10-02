@@ -7,36 +7,80 @@
     </ion-toolbar>
   </ion-header>-->
   <ion-header></ion-header>
-
-  <ion-item>
-    <ion-label position="floating">Seu nome</ion-label>
-    <ion-input placeholder="Digite aqui..."></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Seu e-mail</ion-label>
-    <ion-input placeholder="Digite aqui..."></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating">Seu telefone</ion-label>
-    <ion-input placeholder="Digite aqui..."></ion-input>
-  </ion-item>
   
-  <ion-item>
-    <ion-label position="floating">Sua rua</ion-label>
-    <ion-input placeholder="Digite aqui..."></ion-input>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label position="floating">Seu bairro</ion-label>
-    <ion-input placeholder="Digite aqui..."></ion-input>
-  </ion-item>
+  <form [formGroup]="clienteForm" *ngIf="clienteForm" (ngSubmit)="submit()">
+   
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Seu número</ion-label>
-    <ion-input placeholder="Digite aqui..."></ion-input>
-  </ion-item>
-  <ion-button expand="block">Cadastrar</ion-button>
-  <ion-button expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
+          <ion-item>
+            <ion-label position="floating">Rua</ion-label>
+            <ion-input formControlName="rua" type="text"></ion-input>
+          </ion-item>
+         
+            <ion-item>
+              <ion-label position="floating">Bairro</ion-label>
+              <ion-input formControlName="bairro" type="text"></ion-input>
+            </ion-item>
+           
+
+              <ion-item>
+                <ion-label position="floating">Numero</ion-label>
+                <ion-input formControlName="numero" type="text"></ion-input>
+              </ion-item>
+              
+ 
+    <ion-button shape="round" expand="block" 
+                padding type="submit">
+      Editar
+    </ion-button>
+    <ion-button expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
+
+  </form>
+
+<form  [formGroup]="clienteFormInsert" *ngIf="clienteFormInsert" (ngSubmit)="submit()">
+   
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Rua</ion-label>
+            <ion-input formControlName="rua" type="text"></ion-input>
+          </ion-item>
+         
+            <ion-item>
+              <ion-label position="floating">Bairro</ion-label>
+              <ion-input formControlName="bairro" type="text"></ion-input>
+            </ion-item>
+           
+
+              <ion-item>
+                <ion-label position="floating">Numero</ion-label>
+                <ion-input formControlName="numero" type="text"></ion-input>
+              </ion-item>
+              
+ 
+    <ion-button shape="round" expand="block" 
+                padding type="submit">
+      Cadastrar
+    </ion-button>
+    <ion-button expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
+
+  </form>
+
+ 
 </ion-content>

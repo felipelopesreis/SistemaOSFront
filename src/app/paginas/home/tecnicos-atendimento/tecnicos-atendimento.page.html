@@ -1,0 +1,18 @@
+
+
+<ion-content [fullscreen]="true">
+  <header></header>
+  <ion-title>Atendimentos</ion-title>
+
+  <ion-list>
+    <ion-item button *ngFor="let tecnicoatendimento of tecnicoatendimentos">  
+    <ion-label>
+         <h2>{{tecnicoatendimento.atendimentos}}</h2>
+        <p>{{tecnicoatendimento.id}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+<ion-button expand="block" >Voltar</ion-button>
+
+</ion-content>

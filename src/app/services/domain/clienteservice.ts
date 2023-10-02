@@ -15,4 +15,17 @@ export class ClienteService{
     findAll(): Observable<ClienteDTO[]>{
         return this.http.get<ClienteDTO[]>(`${API_CONFIG.baseUrl}/cliente`);
     }
+
+    findById(id: number) : Observable<ClienteDTO> {
+        return this.http.get<ClienteDTO>(
+            `${API_CONFIG.baseUrl}/cliente/${id}`);
+    }
+
+    insert(cliente: ClienteDTO){
+        return this.http.post(`${API_CONFIG.baseUrl}/cliente`, 
+                                cliente, {
+                                    observe: 'response', 
+                                    responseType: 'text'
+                                });
+    }
 }

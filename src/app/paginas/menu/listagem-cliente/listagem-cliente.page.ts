@@ -12,7 +12,9 @@ export class ListagemClientePage implements OnInit {
 
   clientes!: ClienteDTO[];
 
-  constructor(public clienteService: ClienteService, public nav: NavController,public menu: MenuController ) { }
+  constructor(public clienteService: ClienteService, 
+            private navController: NavController,
+             public menu: MenuController ) { }
 
   ionViewDidEnter(){
     this.clienteService.findAll().subscribe(response=>{
@@ -25,7 +27,11 @@ export class ListagemClientePage implements OnInit {
   }
 
   voltar(){
-    this.nav.navigateForward('tabs/tab1')
+    this.navController.navigateForward('tabs/tab1')
+}
+
+cadastroCliente(){
+  this.navController.navigateForward('cadastro-cliente');
 }
 
   ngOnInit() {
