@@ -11,8 +11,10 @@ import { ClienteService } from 'src/app/services/domain/clienteservice';
 })
 export class CadastroClientePage implements OnInit {
 
+  public modoDeEdicao = false;
+
   clienteForm!: FormGroup;
-  clienteFormInsert!: FormGroup;
+
 
   constructor(private formBuilder: FormBuilder,
               private alertController: AlertController,
@@ -21,18 +23,32 @@ export class CadastroClientePage implements OnInit {
               public clienteService: ClienteService) { }
 
   submit(){
-    this.clienteService.insert(this.clienteFormInsert.value)
+    if(!this.modoDeEdicao){
+    this.clienteService.insert(this.clienteForm.value)
                            .subscribe(response => {
                             this.presentAlert('Sucesso',
                               'O Cliente foi salvo com sucesso',
                               ['Ok'])
                            })
   }
+  if(this.modoDeEdicao){
+    this.clienteService.update(this.clienteForm.value)
+    .subscribe(response => {
+     this.presentAlert('Sucesso',
+       'O Cliente foi atualizado com sucesso',
+       ['Ok'])
+    })
+}
+  
+  }
+
 
   ngOnInit() {
 
     const id: number = Number(this.route.snapshot.paramMap.get('id'));
 
+    if(id > 0){
+      this.modoDeEdicao = true;
        this.clienteService.findById(id).subscribe(response => {
        this.clienteForm = this.formBuilder.group({
         id: [response.id],      
@@ -44,18 +60,21 @@ export class CadastroClientePage implements OnInit {
     
       })
     })
+  }else{
+    this.modoDeEdicao = false;
+    this.clienteForm = this.formBuilder.group({
+      id,      
+      nome: ['', Validators.required],
+      email: ['', Validators.required], 
+      rua: ['', Validators.required], 
+      bairro: ['', Validators.required], 
+      numero: ['', Validators.required], 
+  
+    })
+ 
+}
 
-    this.clienteService.findAll().subscribe(response => {
-      this.clienteFormInsert = this.formBuilder.group({
-      nome:[''],
-     email: [''], 
-     rua: [''], 
-      bairro: [''], 
-      numero: [''], 
     
-     })
-   })
-
   }
 
 

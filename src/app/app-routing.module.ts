@@ -11,7 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/login/login.module').then( m => m.LoginPageModule)
   },
   
-  
   {
     path: 'cadastro-cliente/:id',
     loadChildren: () => import('./paginas/menu/cadastro-cliente/cadastro-cliente.module').then( m => m.CadastroClientePageModule)

@@ -7,8 +7,7 @@
     </ion-toolbar>
   </ion-header>-->
   <ion-header></ion-header>
-  
-  <form [formGroup]="clienteForm" *ngIf="clienteForm" (ngSubmit)="submit()">
+  <form  [formGroup]="clienteForm" *ngIf="clienteForm" (ngSubmit)="submit()">
    
     <ion-item>
       <ion-label position="floating">Nome</ion-label>
@@ -38,49 +37,18 @@
               
  
     <ion-button shape="round" expand="block" 
-                padding type="submit">
-      Editar
+                padding type="submit" *ngIf="!modoDeEdicao">
+    Cadastrar
     </ion-button>
-    <ion-button expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
 
-  </form>
-
-<form  [formGroup]="clienteFormInsert" *ngIf="clienteFormInsert" (ngSubmit)="submit()">
-   
-    <ion-item>
-      <ion-label position="floating">Nome</ion-label>
-      <ion-input formControlName="nome" type="text"></ion-input>
-    </ion-item>
-    
-      <ion-item>
-        <ion-label position="floating">E-mail</ion-label>
-        <ion-input formControlName="email" type="text"></ion-input>
-      </ion-item>
-
-          <ion-item>
-            <ion-label position="floating">Rua</ion-label>
-            <ion-input formControlName="rua" type="text"></ion-input>
-          </ion-item>
-         
-            <ion-item>
-              <ion-label position="floating">Bairro</ion-label>
-              <ion-input formControlName="bairro" type="text"></ion-input>
-            </ion-item>
-           
-
-              <ion-item>
-                <ion-label position="floating">Numero</ion-label>
-                <ion-input formControlName="numero" type="text"></ion-input>
-              </ion-item>
-              
- 
     <ion-button shape="round" expand="block" 
-                padding type="submit">
-      Cadastrar
-    </ion-button>
+    padding type="submit" *ngIf="modoDeEdicao">
+Alterar
+</ion-button>
     <ion-button expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
 
   </form>
 
- 
+
+
 </ion-content>

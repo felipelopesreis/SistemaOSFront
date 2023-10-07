@@ -16,23 +16,35 @@ export class ListagemClientePage implements OnInit {
             private navController: NavController,
              public menu: MenuController ) { }
 
-  ionViewDidEnter(){
-    this.clienteService.findAll().subscribe(response=>{
-                              this.clientes = response
-                              //console.log(response)
-                              },error=>{
-                                  console.log(error);
-                              
-                              });
-  }
+             ionViewDidEnter(){
+              this.clienteService.findAll()
+                                     .subscribe({
+                                        next: 
+                                          (response) => this.clientes = response,                              
+                                        error:
+                                          (error) => console.log(error)
+                                     });
+            }
+          
+            cadastroCliente(){
+              this.navController.navigateForward('cadastro-cliente');
+            }
+          
+            excluirCliente(id: number){
+              this.clienteService.delete(id)
+                                     .subscribe({
+                                        next: 
+                                          (response) => window.location.reload(),                              
+                                        error:
+                                          (error) => console.log(error)
+                                     });
+            }
 
   voltar(){
     this.navController.navigateForward('tabs/tab1')
 }
 
-cadastroCliente(){
-  this.navController.navigateForward('cadastro-cliente');
-}
+
 
   ngOnInit() {
   

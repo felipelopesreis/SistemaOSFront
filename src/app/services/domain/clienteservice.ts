@@ -28,4 +28,13 @@ export class ClienteService{
                                     responseType: 'text'
                                 });
     }
+
+    update(cliente: ClienteDTO){
+        return this.http.put(`${API_CONFIG.baseUrl}/cliente/${cliente.id}`, cliente,{observe: 'response', responseType: 'text'});
+    }
+
+    delete(id: number){
+        return this.http.delete(`${API_CONFIG.baseUrl}/cliente/${id}`)
+    }
+    
 }
