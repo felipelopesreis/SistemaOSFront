@@ -31,7 +31,16 @@ const routes: Routes = [
   {
     path: 'tecnicos-atendimento',
     loadChildren: () => import('./paginas/home/tecnicos-atendimento/tecnicos-atendimento.module').then( m => m.TecnicosAtendimentoPageModule)
+  },
+  {
+    path: 'cadastro-funcionario/:id',
+    loadChildren: () => import('./paginas/menu/cadastro-funcionario/cadastro-funcionario.module').then( m => m.CadastroFuncionarioPageModule)
+  },
+  {
+    path: 'listagem-funcionario',
+    loadChildren: () => import('./paginas/menu/listagem-funcionario/listagem-funcionario.module').then( m => m.ListagemFuncionarioPageModule)
   }
+
 
 
 
