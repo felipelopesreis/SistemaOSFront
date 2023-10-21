@@ -1,7 +1,49 @@
-ion-header{
-    margin-top: 30px;
+ion-content{
+    --background:#D97E7E;
+    position:relative
+
+
+    .header{
+     display: flex;
+     justify-content: space-between;
+     padding: 1rem 0.5rem;
+
+    ion-button{
+        height: 60px;
+        width: 60px;
+
+        ion-icon{
+            font-size: 2ren;
+        }
+    }
 }
+
+form{
+    background-color: #D97E7E;
+}
+
+ion-list{
+    background-color: #D97E7E;
+}
+
+
 ion-item{
+    --background:#D97E7E;
+    --color:#fff;
     padding: 5px;
-    border-radius: 12px;
+
+}
+
+ion-input{
+    border-radius: 8px;
+}
+
+.b1{
+    --background: #8C1414;
+}
+
+.b2{
+    --background: #fff;
+}
+
 }

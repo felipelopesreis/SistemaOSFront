@@ -4,7 +4,14 @@
        <ion-title>cadastro-cliente</ion-title>
      </ion-toolbar>
    </ion-header>-->
-   <ion-header></ion-header>
+    <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/tabs/tab2">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </div>
+
    <form  [formGroup]="funcionarioForm" *ngIf="funcionarioForm" (ngSubmit)="submit()">
     
      <ion-item>
@@ -17,16 +24,26 @@
          <ion-input formControlName="email" type="text"></ion-input>
        </ion-item>
  
-           <ion-item>
-             <ion-label position="floating">Telefone</ion-label>
-             <ion-input formControlName="telefone" type="text"></ion-input>
-           </ion-item>
+       <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input formControlName="telefone" type="text"></ion-input>
+      </ion-item>
+
           
-             <ion-item>
+           <!--<ion-item>
                <ion-label position="floating">Perfil</ion-label>
                <ion-input formControlName="perfil" type="text"></ion-input>
-             </ion-item>
-            
+             </ion-item>-->
+
+             <ion-list>
+              <ion-item>
+                <ion-select formControlName="perfil" placeholder="Selecione um Perfil">
+                  <ion-select-option value="0">SUPERVISOR</ion-select-option>
+                  <ion-select-option value="1">SUPORTE</ion-select-option>
+                  <ion-select-option value="2">TECNICO</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
  
                <ion-item>
                  <ion-label position="floating">Login</ion-label>
@@ -39,16 +56,16 @@
                 <ion-input formControlName="senha" type="text"></ion-input>
               </ion-item>
   
-     <ion-button shape="round" expand="block" 
+     <ion-button class="b1" shape="round" expand="block" 
                  padding type="submit" *ngIf="!modoDeEdicao">
      Cadastrar
      </ion-button>
  
-     <ion-button shape="round" expand="block" 
+     <ion-button  shape="round" expand="block" 
      padding type="submit" *ngIf="modoDeEdicao">
  Alterar
  </ion-button>
-     <ion-button expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
+     <ion-button class="b2" expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
  
    </form>
  

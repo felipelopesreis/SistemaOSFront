@@ -5,6 +5,70 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <form [formGroup]="ordemServicoForm" *ngIf="ordemServicoForm" (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input formControlName="titulo" type="text"></ion-input>
+    </ion-item>
 
-  
+    <!--
+    <ion-item>
+      <ion-label position="floating">Data de Abertura</ion-label>
+      <ion-input formControlName="dataAbertura" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Data de Fechamento</ion-label>
+      <ion-input formControlName="dataFechamento" type="text"></ion-input>
+    </ion-item>
+    -->
+
+    <ion-item>
+      <ion-label position="floating">Tipo de Servico</ion-label>
+      <ion-select formControlName="tipoServico" placeholder="Selecione...">
+        <ion-select-option value="0">FUNCIONAMENTO</ion-select-option>
+        <ion-select-option value="1">LENTIDAO</ion-select-option>
+        <ion-select-option value="2">CONFIGURACAO</ion-select-option>
+        <ion-select-option value="3">INSTALACAO</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+ 
+    <ion-item>
+      <ion-label position="floating">Prioridade</ion-label>
+      <ion-select formControlName="prioridade" placeholder="Selecione...">
+        <ion-select-option value="0">ALTA</ion-select-option>
+        <ion-select-option value="1">MEDIA</ion-select-option>
+        <ion-select-option value="2">BAIXA</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Status</ion-label>
+      <ion-select formControlName="status" placeholder="Selecione...">
+        <ion-select-option value="0">ABERTO</ion-select-option>
+        <ion-select-option value="1">ANDAMENTO</ion-select-option>
+        <ion-select-option value="2">FECHADO</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Clientes</ion-label>
+      <ion-select formControlName="cliente" placeholder="Selecione...">
+        <ion-select-option *ngFor="let cliente of clientes" 
+                            value="{{cliente.id}}">{{cliente.nome}}</ion-select-option>          
+      </ion-select>
+    </ion-item>
+
+    <ion-button shape="round" expand="block" 
+    padding type="submit" *ngIf="!modoDeEdicao">
+Cadastrar
+</ion-button>
+
+<ion-button shape="round" expand="block" 
+padding type="submit" *ngIf="modoDeEdicao">
+Alterar
+</ion-button>
+</form>
 </ion-content>

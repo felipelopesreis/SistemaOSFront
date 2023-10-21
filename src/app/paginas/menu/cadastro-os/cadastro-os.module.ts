@@ -12,6 +12,7 @@ import { CadastroOsPage } from './cadastro-os.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     CadastroOsPageRoutingModule
   ],

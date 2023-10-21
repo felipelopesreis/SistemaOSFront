@@ -10,6 +10,7 @@ ion-header{
 
 p{
     font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -23,11 +24,12 @@ ion-col{
 }
 
 ion-icon{
-    border: #dad6d6  solid 1px;
+    border: #D97E7E  solid 1px;
     border-radius: 50%;
     padding: 15px;
-    background-color:#dad6d6;
-    color:#8C1414;
+    background-color:#D97E7E;
+    color:#ffff;
+    margin-bottom: 10px;
 }
 
 a{

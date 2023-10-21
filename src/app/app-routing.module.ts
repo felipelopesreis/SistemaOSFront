@@ -17,7 +17,7 @@ const routes: Routes = [
   },
  
   {
-    path: 'cadastro-os',
+    path: 'cadastro-os/:id',
     loadChildren: () => import('./paginas/menu/cadastro-os/cadastro-os.module').then( m => m.CadastroOsPageModule)
   },
   {
@@ -39,7 +39,12 @@ const routes: Routes = [
   {
     path: 'listagem-funcionario',
     loadChildren: () => import('./paginas/menu/listagem-funcionario/listagem-funcionario.module').then( m => m.ListagemFuncionarioPageModule)
+  },
+  {
+    path: 'listagem-os',
+    loadChildren: () => import('./paginas/menu/listagem-os/listagem-os.module').then( m => m.ListagemOsPageModule)
   }
+
 
 
 

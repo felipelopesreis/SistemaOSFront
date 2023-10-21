@@ -1,31 +1,25 @@
 
-<ion-content [fullscreen]="true">
-  <form>
-  <ion-toolbar>
-    <ion-title>
-      <h2>Perfil</h2>
-    </ion-title>
-  </ion-toolbar>
+<ion-content>
+<div class="header">
+<ion-buttons>
+  <ion-button routerLink="/tabs/tab2">
+    <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+  </ion-button>
+</ion-buttons>
 
-  <ion-icon name="person-circle-outline"></ion-icon>
-</form>
+<!--
+<ion-buttons>
+  <ion-button>
+    <ion-icon slot="icon-only" color="light" name="chatbubble-outline"></ion-icon>
+  </ion-button>
+</ion-buttons>-->
 
-<ion-item>
-  <ion-toolbar>
-    <ion-title>
-      <p class="titulo-user">Meus Dados</p>
-    </ion-title>
-  </ion-toolbar>
+</div>
+
+<div class="card">
+  <div class="img">
+    <ion-img src="./assets/sakuragi.png"></ion-img>
+  </div>
+</div>
   
-</ion-item>
-
-  <p class="atributos-user">Nome</p>
-  <p class="atributos-user">E-mail</p>
-  <p class="atributos-user">Função</p>
-  <p class="atributos-user">Número de Chamados</p>
-  
-
-
-  <ion-button expand="block" (click)="voltarInicio()"><ion-icon class="icone-voltar" name="arrow-back-circle-outline"></ion-icon>Desconectar-se</ion-button>
-
 </ion-content>
