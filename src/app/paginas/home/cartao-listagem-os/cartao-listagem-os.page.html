@@ -5,7 +5,7 @@
   <h2>OS Abertas</h2>
 
   <ion-card button [ngClass]="{'status-alta': atendimentoosaberto.prioridade === 0, 'status-media': atendimentoosaberto.prioridade === 1, 'status-baixa': atendimentoosaberto.prioridade === 2}" *ngFor="let atendimentoosaberto of atendimentososabertos">
-    <ion-card-header>
+    <ion-card-header  routerLink="/cadastro-os/{{atendimentoosaberto.id}}">
       <ion-card-title>{{ atendimentoosaberto.titulo }}</ion-card-title>
        <ion-card-subtitle><b>Os :</b> {{ atendimentoosaberto.id }} </ion-card-subtitle>
       <ion-card-subtitle><b>Requerente :</b> {{ atendimentoosaberto.cliente }}</ion-card-subtitle>

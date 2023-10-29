@@ -6,26 +6,30 @@
    </ion-header>-->
     <div class="header">
     <ion-buttons>
-      <ion-button routerLink="/tabs/tab2">
+      <ion-button routerLink="/listagem-funcionario">
         <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
     </div>
 
+    <div class="icone">
+      <ion-icon class="logo" name="person-circle-outline"></ion-icon>
+    </div>
+
    <form  [formGroup]="funcionarioForm" *ngIf="funcionarioForm" (ngSubmit)="submit()">
     
      <ion-item>
-       <ion-label position="floating">Nome</ion-label>
+       <ion-label position="floating" color="white">Nome</ion-label>
        <ion-input formControlName="nome" type="text"></ion-input>
      </ion-item>
      
        <ion-item>
-         <ion-label position="floating">E-mail</ion-label>
+         <ion-label position="floating" color="white">E-mail</ion-label>
          <ion-input formControlName="email" type="text"></ion-input>
        </ion-item>
  
-       <ion-item>
-        <ion-label position="floating">Telefone</ion-label>
+       <ion-item >
+        <ion-label position="floating" color="white">Telefone</ion-label>
         <ion-input formControlName="telefone" type="text"></ion-input>
       </ion-item>
 
@@ -36,8 +40,8 @@
              </ion-item>-->
 
              <ion-list>
-              <ion-item>
-                <ion-select formControlName="perfil" placeholder="Selecione um Perfil">
+              <ion-item >
+                <ion-select formControlName="perfil"  placeholder="Selecione um Perfil">
                   <ion-select-option value="0">SUPERVISOR</ion-select-option>
                   <ion-select-option value="1">SUPORTE</ion-select-option>
                   <ion-select-option value="2">TECNICO</ion-select-option>
@@ -45,14 +49,14 @@
               </ion-item>
             </ion-list>
  
-               <ion-item>
-                 <ion-label position="floating">Login</ion-label>
+               <ion-item> 
+                 <ion-label position="floating" color="white" >Login</ion-label>
                  <ion-input formControlName="login" type="text"></ion-input>
                </ion-item>
                
                
                <ion-item>
-                <ion-label position="floating">Senha</ion-label>
+                <ion-label position="floating" color="white">Senha</ion-label>
                 <ion-input formControlName="senha" type="text"></ion-input>
               </ion-item>
   
@@ -65,7 +69,6 @@
      padding type="submit" *ngIf="modoDeEdicao">
  Alterar
  </ion-button>
-     <ion-button class="b2" expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
  
    </form>
  

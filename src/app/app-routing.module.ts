@@ -43,7 +43,42 @@ const routes: Routes = [
   {
     path: 'listagem-os',
     loadChildren: () => import('./paginas/menu/listagem-os/listagem-os.module').then( m => m.ListagemOsPageModule)
+  },
+  {
+    path: 'cadastro-atendimento/:id',
+    loadChildren: () => import('./paginas/menu/cadastro-atendimento/cadastro-atendimento.module').then( m => m.CadastroAtendimentoPageModule)
+  },
+  {
+    path: 'listagem-atendimento',
+    loadChildren: () => import('./paginas/menu/listagem-atendimento/listagem-atendimento.module').then( m => m.ListagemAtendimentoPageModule)
+  },
+  {
+    path: 'equipamento-crud/:id',
+    loadChildren: () => import('./paginas/menu/equipamento/equipamento-crud/equipamento-crud.module').then( m => m.EquipamentoCrudPageModule)
+  },
+  {
+    path: 'listagem-equipamento',
+    loadChildren: () => import('./paginas/menu/equipamento/listagem-equipamento/listagem-equipamento.module').then( m => m.ListagemEquipamentoPageModule)
+  },
+  {
+    path: 'cadastro-equipamento-item',
+    loadChildren: () => import('./paginas/menu/equipamento/cadastro-equipamento-item/cadastro-equipamento-item.module').then( m => m.CadastroEquipamentoItemPageModule)
+  },
+  {
+    path: 'listagem-all',
+    loadChildren: () => import('./paginas/menu/listagem-all/listagem-all.module').then( m => m.ListagemAllPageModule)
+  },
+  {
+    path: 'cadastro-comodato/:id',
+    loadChildren: () => import('./paginas/menu/cadastro-comodato/cadastro-comodato.module').then( m => m.CadastroComodatoPageModule)
+  },
+  {
+    path: 'listagem-comodato',
+    loadChildren: () => import('./paginas/menu/listagem-comodato/listagem-comodato.module').then( m => m.ListagemComodatoPageModule)
   }
+
+
+
 
 
 

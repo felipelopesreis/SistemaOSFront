@@ -10,4 +10,5 @@ export interface OrdemServicoDTO{
 		id: number;
 		nome: string;
 	}
+
 }

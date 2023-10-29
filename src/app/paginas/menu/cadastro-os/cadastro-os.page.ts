@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
+import { AtendimentoDTO } from 'src/app/models/AtendimentoDTO';
 import { ClienteDTO } from 'src/app/models/ClienteDTO';
 import { OrdemServicoDTO } from 'src/app/models/OrdemServicoDTO';
+import { AtendimentoService } from 'src/app/services/domain/atendimentoservice';
 import { ClienteService } from 'src/app/services/domain/clienteservice';
 import { OrdemServicoService } from 'src/app/services/domain/ordemservico.service';
 
@@ -42,8 +44,7 @@ export class CadastroOsPage implements OnInit {
         tipoServico: [response.tipoServico, Validators.required], 
         prioridade: [response.prioridade, Validators.required], 
         status: [response.status, Validators.required], 
-        cliente: [response.cliente, Validators.required], 
-
+        cliente: [response.cliente, Validators.required]
       })
     })
   }else{
@@ -100,6 +101,7 @@ export class CadastroOsPage implements OnInit {
       next: (response) => this.clientes = response,
       error: (error) => console.log(error)
     });
+
   }
 
   async presentAlert(header: string,

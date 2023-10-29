@@ -12,7 +12,7 @@ export class Tab3Page  implements OnInit{
     public menu: MenuController) {}
 
 
-    voltarInicio(){
+    sair(){
       this.nav.navigateForward('/login')
   }
 

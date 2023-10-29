@@ -12,11 +12,15 @@ import { ClienteService } from './services/domain/clienteservice';
 import { AtendimentoOsAbertaService } from './services/domain/atendimentoosaberta.service';
 import { TecnicoAtendimentoService } from './services/domain/tecnicoatendimentoservice';
 import { FuncionarioService } from './services/domain/funcionarioservice';
+import { AtendimentoService } from './services/domain/atendimentoservice';
+import { EquipamentoService } from './services/domain/equipamentoservice';
+import { EquipamentoItemService } from './services/domain/equipamentoitemservice';
+import { ComodatoService } from './services/domain/comodatoservice';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },OrdemServicoService, ClienteService, AtendimentoOsAbertaService, TecnicoAtendimentoService, FuncionarioService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },OrdemServicoService, ClienteService, AtendimentoOsAbertaService, TecnicoAtendimentoService, FuncionarioService, AtendimentoService, EquipamentoService, EquipamentoItemService,ComodatoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
