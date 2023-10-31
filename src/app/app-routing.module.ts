@@ -75,7 +75,11 @@ const routes: Routes = [
   {
     path: 'listagem-comodato',
     loadChildren: () => import('./paginas/menu/listagem-comodato/listagem-comodato.module').then( m => m.ListagemComodatoPageModule)
+  },  {
+    path: 'cartao-os-fechada',
+    loadChildren: () => import('./paginas/home/cartao-os-fechada/cartao-os-fechada.module').then( m => m.CartaoOsFechadaPageModule)
   }
+
 
 
 

@@ -1,42 +1,51 @@
 
 
 <ion-content [fullscreen]="true">
- <!-- <ion-header>
-    <ion-toolbar>
-      <ion-title>cadastro-cliente</ion-title>
-    </ion-toolbar>
-  </ion-header>-->
-  <ion-header></ion-header>
+
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listagem-funcionario">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </div>
+
+    <div class="icone">
+      <ion-icon class="logo" name="person-circle-outline"></ion-icon>
+    </div>
+  
   <form  [formGroup]="clienteForm" *ngIf="clienteForm" (ngSubmit)="submit()">
+
    
-    <ion-item>
-      <ion-label position="floating">Nome</ion-label>
+   
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Nome</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
     
-      <ion-item>
-        <ion-label position="floating">E-mail</ion-label>
+      <ion-item color="white">
+        <ion-label position="floating" color="white">E-mail</ion-label>
         <ion-input formControlName="email" type="text"></ion-input>
       </ion-item>
 
-          <ion-item>
-            <ion-label position="floating">Rua</ion-label>
+          <ion-item color="white">
+            <ion-label position="floating" color="white">Rua</ion-label>
             <ion-input formControlName="rua" type="text"></ion-input>
           </ion-item>
          
-            <ion-item>
-              <ion-label position="floating">Bairro</ion-label>
+            <ion-item color="white">
+              <ion-label position="floating" color="white">Bairro</ion-label>
               <ion-input formControlName="bairro" type="text"></ion-input>
             </ion-item>
            
 
-              <ion-item>
-                <ion-label position="floating">Numero</ion-label>
+              <ion-item color="white">
+                <ion-label position="floating" color="white">Numero</ion-label>
                 <ion-input formControlName="numero" type="text"></ion-input>
               </ion-item>
               
  
-    <ion-button shape="round" expand="block" 
+    <ion-button class="b1" shape="round" expand="block"  
                 padding type="submit" *ngIf="!modoDeEdicao">
     Cadastrar
     </ion-button>
@@ -45,7 +54,7 @@
     padding type="submit" *ngIf="modoDeEdicao">
 Alterar
 </ion-button>
-    <ion-button expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>
+   <!-- <ion-button class="b2" expand="block" fill="outline" (click)="voltar()">Voltar</ion-button>-->
 
   </form>
 

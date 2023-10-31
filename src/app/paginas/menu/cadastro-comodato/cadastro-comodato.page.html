@@ -1,22 +1,35 @@
 
 <ion-content [fullscreen]="true">
-  <ion-header></ion-header>
+
+
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listagem-comodato">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </div>
+
+    <div class="icone">
+      <ion-icon class="logo" name="receipt-outline"></ion-icon>
+    </div>
+
   <form [formGroup]="comodatoForm" *ngIf="comodatoForm" (ngSubmit)="submit()">
-    <ion-item>
-      <ion-label position="floating">Data Instalacao</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Data Instalacao</ion-label>
       <ion-input formControlName="dataInstalacao" type="text"></ion-input>
     </ion-item>
 
 
-    <ion-item>
-      <ion-label position="floating">Ordem de Servico</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Ordem de Servico</ion-label>
       <ion-select formControlName="os" placeholder="Selecione...">
         <ion-select-option *ngFor="let os of ordemServicos" 
                             value="{{os.id}}">{{os.titulo}}</ion-select-option>          
       </ion-select>
     </ion-item>
 
-    <ion-button shape="round" expand="block" 
+    <ion-button class="b1" shape="round" expand="block" 
     padding type="submit" *ngIf="!modoDeEdicao">
 Cadastrar
 </ion-button>

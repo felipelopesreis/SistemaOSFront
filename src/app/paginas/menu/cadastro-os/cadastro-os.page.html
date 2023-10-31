@@ -1,9 +1,22 @@
 
 <ion-content [fullscreen]="true">
-  <ion-header></ion-header>
+
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listagem-os">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </div>
+
+    <div class="icone">
+      <ion-icon class="logo" name="list-circle-outline"></ion-icon>
+    </div>
+  
+  
   <form [formGroup]="ordemServicoForm" *ngIf="ordemServicoForm" (ngSubmit)="submit()">
-    <ion-item>
-      <ion-label position="floating">Titulo</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Titulo</ion-label>
       <ion-input formControlName="titulo" type="text"></ion-input>
     </ion-item>
 
@@ -19,8 +32,8 @@
     </ion-item>
     -->
 
-    <ion-item>
-      <ion-label position="floating">Tipo de Servico</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Tipo de Servico</ion-label>
       <ion-select formControlName="tipoServico" placeholder="Selecione...">
         <ion-select-option value="0">FUNCIONAMENTO</ion-select-option>
         <ion-select-option value="1">LENTIDAO</ion-select-option>
@@ -31,8 +44,8 @@
 
 
  
-    <ion-item>
-      <ion-label position="floating">Prioridade</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Prioridade</ion-label>
       <ion-select formControlName="prioridade" placeholder="Selecione...">
         <ion-select-option value="0">ALTA</ion-select-option>
         <ion-select-option value="1">MEDIA</ion-select-option>
@@ -40,8 +53,8 @@
       </ion-select>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Status</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Status</ion-label>
       <ion-select formControlName="status" placeholder="Selecione...">
         <ion-select-option value="0">ABERTO</ion-select-option>
         <ion-select-option value="1">ANDAMENTO</ion-select-option>
@@ -49,7 +62,7 @@
       </ion-select>
     </ion-item>
 
-    <ion-item>
+    <ion-item color="white">
       <ion-label position="floating">Clientes</ion-label>
       <ion-select formControlName="cliente" placeholder="Selecione...">
         <ion-select-option *ngFor="let cliente of clientes" 
@@ -57,7 +70,7 @@
       </ion-select>
     </ion-item>
 
-    <ion-button shape="round" expand="block" 
+    <ion-button class="b1" shape="round" expand="block" 
     padding type="submit" *ngIf="!modoDeEdicao">
 Cadastrar
 </ion-button>

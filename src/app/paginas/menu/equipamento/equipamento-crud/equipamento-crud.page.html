@@ -1,43 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Equipamento</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
+
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listagem-equipamento">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </div>
+
+    <div class="icone">
+      <ion-icon class="logo" name="hardware-chip-outline"></ion-icon>
+    </div>
+
   <form [formGroup]="equipamentoForm" *ngIf="equipamentoForm" (ngSubmit)="submit()">
     
-    <ion-item>
-      <ion-label position="floating">Nome</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Nome</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Descrição</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Descrição</ion-label>
       <ion-input formControlName="descricao" type="text"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Dispositivo</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Dispositivo</ion-label>
       <ion-input formControlName="dispositivo" type="text"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Marca</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Marca</ion-label>
       <ion-input formControlName="marca" type="text"></ion-input>
     </ion-item>
    
 
-    <ion-item>
-      <ion-label position="floating">Foto</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Foto</ion-label>
       <ion-input formControlName="foto" type="text"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Quantidade</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Quantidade</ion-label>
       <ion-input formControlName="quantidade" type="text"></ion-input>
     </ion-item>
 
-    <ion-button shape="round" expand="block" 
+    <ion-button class="b1" shape="round" expand="block" 
                 padding type="submit" *ngIf="!modoDeEdicao">
       Cadastrar
       
