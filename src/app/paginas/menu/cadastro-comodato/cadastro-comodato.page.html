@@ -20,12 +20,25 @@
       <ion-input formControlName="dataInstalacao" type="text"></ion-input>
     </ion-item>
 
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Data Devolucao</ion-label>
+      <ion-input formControlName="dataDevolucao" type="text"></ion-input>
+    </ion-item>
+
 
     <ion-item color="white">
       <ion-label position="floating" color="white">Ordem de Servico</ion-label>
       <ion-select formControlName="os" placeholder="Selecione...">
         <ion-select-option *ngFor="let os of ordemServicos" 
                             value="{{os.id}}">{{os.titulo}}</ion-select-option>          
+      </ion-select>
+    </ion-item>
+
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Produto Serial</ion-label>
+      <ion-select formControlName="equipamentoItem" placeholder="Selecione...">
+        <ion-select-option *ngFor="let equipamentoItem of equipamentoItems" 
+                            value="{{equipamentoItem.id}}">{{equipamentoItem.serial}}</ion-select-option>          
       </ion-select>
     </ion-item>
 

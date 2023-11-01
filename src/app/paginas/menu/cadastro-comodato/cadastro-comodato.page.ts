@@ -3,8 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
 import { ComodatoDTO } from 'src/app/models/ComodatoDTO';
+import { EquipamentoItemDTO } from 'src/app/models/EquipamentoItemDTO';
 import { OrdemServicoDTO } from 'src/app/models/OrdemServicoDTO';
 import { ComodatoService } from 'src/app/services/domain/comodatoservice';
+import { EquipamentoItemService } from 'src/app/services/domain/equipamentoitemservice';
 import { OrdemServicoService } from 'src/app/services/domain/ordemservico.service';
 
 @Component({
@@ -18,12 +20,14 @@ export class CadastroComodatoPage implements OnInit {
 
   
   ordemServicos!: OrdemServicoDTO[];
+  equipamentoItems!: EquipamentoItemDTO[];
   comodato!: ComodatoDTO;
   comodatoForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
     public comodatoService: ComodatoService,
     public ordemServicoService: OrdemServicoService,
+    public equipamentoItemService: EquipamentoItemService,
     private route: ActivatedRoute,
     private navController: NavController,
     public alertController: AlertController) { }
@@ -37,7 +41,9 @@ export class CadastroComodatoPage implements OnInit {
        this.comodatoForm = this.formBuilder.group({
         id: [response.id],      
         dataInstalacao: [response.dataInstalacao, Validators.required],
-        os: [response.os, Validators.required]
+        dataDevolucao: [response.dataDevolucao, Validators.required],
+        os: [response.os, Validators.required],
+        equipamentoItem: [response.equipamentoItem, Validators.required]
       })
     })
   }else{
@@ -45,7 +51,9 @@ export class CadastroComodatoPage implements OnInit {
 
     this.comodatoForm = this.formBuilder.group({
       dataInstalacao: ['', Validators.required],
-      os: ['', Validators.required]
+      dataDevolucao: ['', Validators.required],
+      os: ['', Validators.required],
+      equipamentoItem: ['', Validators.required]
     })
   }
   }
@@ -54,9 +62,13 @@ export class CadastroComodatoPage implements OnInit {
 
   submit(){
     let comodato = {
-      'dataInstalacao': this.comodatoForm.value.titulo,
+      'dataInstalacao': this.comodatoForm.value.dataInstalacao,
+      'dataDevolucao': this.comodatoForm.value.dataDevolucao,
       'os': {
         'id': this.comodatoForm.value.os
+      },
+      'equipamentoItem': {
+        'id': this.comodatoForm.value.equipamentoItem
       }
     }
 
@@ -82,6 +94,11 @@ export class CadastroComodatoPage implements OnInit {
   ionViewDidEnter(){
     this.ordemServicoService.findAll().subscribe({
       next: (response) => this.ordemServicos = response,
+      error: (error) => console.log(error)
+    });
+
+    this.equipamentoItemService.findAll().subscribe({
+      next: (response) => this.equipamentoItems = response,
       error: (error) => console.log(error)
     });
 

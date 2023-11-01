@@ -1,13 +1,27 @@
-<ion-header [translucent]="true">
- 
-    <ion-title>
-     
-      <p>Olá, Mateus.</p>
-    </ion-title>
 
-</ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <div class="main_content_div">
+    <!-- Botão de acesso ao menu -->
+
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="black"></ion-menu-button>
+
+    </ion-buttons>
+  
+    <!-- Info de Usuario logado -->
+    <div class="user_div">
+      <div class="first_div">
+        <ion-label class="welcome">Bem Vindo</ion-label>
+        <ion-label class="username">Sakuragi Kun</ion-label>
+      </div>
+      <div class="user_back" 
+           [style.backgroundImage]="'url(/assets/logos.png)'">
+      </div>
+    </div>
+   
+  </div>
   
   <ion-grid>
     <ion-row>
@@ -27,7 +41,7 @@
 
       <ion-col>
         <ion-icon name="bar-chart-outline"></ion-icon>
-        Dashboards Ordens de serviço
+        <a routerLink="/teste">Dashboards Ordens de serviço</a>
     </ion-col>
 
     <ion-col>
