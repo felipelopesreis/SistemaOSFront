@@ -78,6 +78,8 @@ export class CadastroComodatoPage implements OnInit {
                                   this.presentAlert('Sucesso',
                                     'O comodato foi salvo com sucesso', ['Ok'])
                                })
+
+                              
       }
 
       if(this.modoDeEdicao){
@@ -86,8 +88,10 @@ export class CadastroComodatoPage implements OnInit {
          this.presentAlert('Sucesso',
            'O comodato foi atualizado com sucesso',
            ['Ok'])
-        })
-    }
+        });
+          }
+           
+        
 
   }
 

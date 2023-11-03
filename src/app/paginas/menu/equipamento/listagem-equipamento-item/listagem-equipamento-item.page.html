@@ -1,0 +1,36 @@
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listagem-equipamento">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </div>
+
+    
+  
+  
+  <ion-item-sliding button *ngFor="let equipamentoItem of equipamentoItens" > 
+    
+    <h2>Produto {{equipamentoItem.id}}</h2>
+
+    <ion-card>
+      <img  src={{equipamentoItem.equipamento.foto}}/>
+      <ion-card-header>
+        <ion-card-title><span>Nome:</span> {{equipamentoItem.equipamento.nome}}</ion-card-title>
+        <ion-card-subtitle><span>Serial:</span> {{equipamentoItem.serial}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Marca:</span> {{equipamentoItem.equipamento.marca}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Situação:</span> {{equipamentoItem.situacao}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Quantidade:</span> {{equipamentoItem.equipamento.quantidade}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+      <span>Descrição:</span> {{equipamentoItem.equipamento.descricao}}
+      </ion-card-content>
+    </ion-card>
+
+  </ion-item-sliding>
+</ion-content>

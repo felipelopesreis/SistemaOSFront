@@ -1,43 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>listagem-atendimento</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
+ 
   <div class="header">
     <ion-buttons>
-      <ion-button routerLink="/tabs/tab1">
+      <ion-button routerLink="/listagem-os">
         <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-  
-    <ion-title>Serviços</ion-title>
-  
-   
     </div>
-
-  <ion-fab slot="fixed" vertical="bottom" 
-  horizontal="end" [edge]="false">
-<ion-fab-button routerLink="/cadastro-atendimento/-1">
-<ion-icon name="add"></ion-icon>
-</ion-fab-button>
-</ion-fab>
 
   <ion-list>
     <ion-item-sliding button *ngFor="let atendimento of atendimentos" > 
-      <ion-item>
-    <ion-label>
-         <h2>atendimento: {{atendimento.id}}</h2>
-        <p><span>Relato:</span> {{atendimento.relatoTecnico}}</p>
-        <p><span>Tecnico:</span> {{atendimento.funcionario.nome}}</p>
-        <p><span>OS:</span> {{atendimento.os.titulo}}</p>
 
+      <h2>Produto {{atendimento.id}}</h2>
+   
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title><span>Titulo:</span> {{atendimento.os.titulo}}</ion-card-title>
+        <ion-card-subtitle><span>Data Abertura:</span> {{atendimento.os.dataAbertura}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Data Fechamento:</span> {{atendimento.os.dataFechamento}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Categoria:</span> {{atendimento.os.tipoServico}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Prioridade:</span> {{atendimento.os.prioridade}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Status:</span> {{atendimento.os.status}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Cliente:</span> {{atendimento.os.cliente.nome}}</ion-card-subtitle>
+        <ion-card-subtitle><span>Técnico:</span> {{atendimento.funcionario.nome}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+      <span>{{atendimento.relatoTecnico}}</span>
+      </ion-card-content>
 
-        
-    </ion-label>
-       
-    </ion-item> 
+      <ion-button fill="clear" routerLink="/cadastro-atendimento/{{atendimento.id}}">Adicionar Solução</ion-button>
+
+    </ion-card>
 
     <ion-item-options side="end">
       <ion-item-option routerLink="/cadastro-atendimento/{{atendimento.id}}">

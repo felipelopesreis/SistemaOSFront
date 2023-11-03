@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
+import { AlertController, NavController } from '@ionic/angular';
 import { EquipamentoDTO } from 'src/app/models/EquipamentoDTO';
 import { EquipamentoItemDTO } from 'src/app/models/EquipamentoItemDTO';
 import { EquipamentoItemService } from 'src/app/services/domain/equipamentoitemservice';
@@ -20,6 +21,8 @@ export class CadastroEquipamentoItemPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
     public equipamentoService: EquipamentoService,
     public equipamentoItemService: EquipamentoItemService,
+    private route: ActivatedRoute,
+    private navController: NavController,
     public alertController: AlertController) { }
 
   ngOnInit() {
@@ -44,7 +47,17 @@ export class CadastroEquipamentoItemPage implements OnInit {
                                   this.presentAlert('Sucesso',
                                     'O Item foi salvo com sucesso', ['Ok'])
                                })
+
+    this.equipamentoItemService.update(this.equipamentoItemForm.value)
+        .subscribe(response => {
+         this.presentAlert('Sucesso',
+           'A OS foi atualizado com sucesso',
+           ['Ok'])
+
+        })
   }
+
+
 
   ionViewDidEnter(){
     this.equipamentoService.findAll().subscribe({
@@ -58,7 +71,14 @@ export class CadastroEquipamentoItemPage implements OnInit {
     const alert = await this.alertController.create({
       header,
       message,
-      buttons
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.navController.navigateForward('listagem-equipamento');
+          }
+        }
+      ]
     });
 
     await alert.present();

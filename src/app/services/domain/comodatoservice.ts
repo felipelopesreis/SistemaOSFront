@@ -33,6 +33,7 @@ export class ComodatoService{
         return this.http.put(`${API_CONFIG.baseUrl}/comodatos/${comodato.id}`, comodato,{observe: 'response', responseType: 'text'});
     }
 
+
     delete(id: number){
         return this.http.delete(`${API_CONFIG.baseUrl}/comodatos/${id}`)
     }

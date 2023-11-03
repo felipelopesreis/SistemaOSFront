@@ -4,8 +4,8 @@
 
   <div class="header">
     <ion-buttons>
-      <ion-button routerLink="/listagem-all">
-        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      <ion-button slot="start" class="menu_btn">
+        <ion-menu-button color="black"></ion-menu-button>
       </ion-button>
     </ion-buttons>
 
@@ -16,16 +16,16 @@
    
     </div>
 
-  <ion-fab slot="fixed" vertical="bottom" 
+  <ion-fab class="add" slot="fixed" vertical="bottom" 
   horizontal="end" [edge]="false">
 <ion-fab-button routerLink="/cadastro-os/-1">
 <ion-icon name="add"></ion-icon>
 </ion-fab-button>
 </ion-fab>
 
-<ion-fab slot="fixed" vertical="bottom" 
-horizontal="start" [edge]="false">
-<ion-fab-button routerLink="/cadastro-os/-1">
+<ion-fab class="atendimento" slot="fixed" vertical="bottom" 
+horizontal="end" [edge]="false">
+<ion-fab-button routerLink="/cadastro-atendimento/-1">
 <ion-icon name="person-outline"></ion-icon>
 </ion-fab-button>
 </ion-fab>
@@ -34,15 +34,15 @@ horizontal="start" [edge]="false">
     <ion-item-sliding button *ngFor="let ordemServico of ordemServicos" > 
       <ion-item>
     <ion-label>
-         <h2>Ordem de Serviço: {{ordemServico.id}}</h2>
+       <h2 routerLink="/listagem-atendimento"><ion-icon name="construct-outline"></ion-icon> Ordem Serviço: {{ordemServico.id}}</h2>
         <p><span>Título:</span> {{ordemServico.titulo}}</p>
         <p><span>Abertura:</span> {{ordemServico.dataAbertura}}</p>
-        <p><span>Fechamento:</span> {{ordemServico.dataFechamento}}</p>
+       <!-- <p><span>Fechamento:</span> {{ordemServico.dataFechamento}}</p>
         <p><span>Tipo de Serviço:</span> {{ordemServico.tipoServico}}</p>
         <p><span>Prioridade:</span> {{ordemServico.prioridade}}</p>
         <p><span>Status:</span> {{ordemServico.status}}</p>
 
-        <p><span>Cliente:</span> {{ordemServico.cliente.nome}}</p>
+        <p><span>Cliente:</span> {{ordemServico.cliente.nome}}</p>-->
 
         
       

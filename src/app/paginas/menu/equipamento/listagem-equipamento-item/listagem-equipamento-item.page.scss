@@ -1,13 +1,10 @@
 ion-content{
-   --background: #8C1414;
+    --background:#8C1414;
 
     h2{
-        color: #252222;
+        color: #fff;
         text-align: center;
     }
-
-    ion-list{
-        --background: #8C1414;
 
     ion-card{
         background-color:#faf5f5;
@@ -26,5 +23,4 @@ ion-content{
             color:#242222;
         }
     }
-}
 }

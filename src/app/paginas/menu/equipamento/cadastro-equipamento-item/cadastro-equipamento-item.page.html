@@ -1,31 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>cadastro-equipamento-item</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
+
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/listagem-equipamento">
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    </div>
+
+
   <form [formGroup]="equipamentoItemForm" *ngIf="equipamentoItemForm" (ngSubmit)="submit()">
-    <ion-item>
-      <ion-label position="floating">Serial</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Serial</ion-label>
       <ion-input formControlName="serial" type="text"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Situação</ion-label>
+    <ion-item color="white">
+      <ion-label position="floating" color="white">Situação</ion-label>
       <ion-select formControlName="situacao" placeholder="Selecione...">
         <ion-select-option value="ALOCADO">Alocado</ion-select-option>
         <ion-select-option value="DISPONIVEL">Disponível</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Equipamento</ion-label>
+    <ion-item color="white"> 
+      <ion-label position="floating" color="white">Equipamento</ion-label>
       <ion-select formControlName="equipamento" placeholder="Selecione...">
         <ion-select-option *ngFor="let equipamento of equipamentos" 
                             value="{{equipamento.id}}">{{equipamento.nome}}</ion-select-option>          
       </ion-select>
     </ion-item>
 
-    <ion-button shape="round" expand="block" 
+    <ion-button class="b1" shape="round" expand="block" 
                 padding type="submit">
       Cadastrar
       

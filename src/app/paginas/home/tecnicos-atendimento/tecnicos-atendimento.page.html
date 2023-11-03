@@ -1,8 +1,20 @@
 
 
 <ion-content [fullscreen]="true">
-  <header></header>
-  <ion-title>Atendimentos</ion-title>
+ 
+  <div class="header">
+    <ion-buttons>
+      <ion-button slot="start" class="menu_btn">
+        <ion-menu-button color="black"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+
+    
+  
+    <ion-title>Atendimento</ion-title>
+  
+   
+    </div>
 
   <ion-list>
     <ion-item button *ngFor="let tecnicoatendimento of tecnicoatendimentos">  

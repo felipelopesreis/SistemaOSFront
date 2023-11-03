@@ -1,9 +1,19 @@
 
 
 <ion-content [fullscreen]="true">
-  <ion-header >
-  </ion-header>
-  <h2>OS Fechadas</h2>
+  <div class="header">
+    <ion-buttons>
+      <ion-button slot="start" class="menu_btn">
+        <ion-menu-button color="black"></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+
+    
+  
+    <ion-title>OS Fechadas</ion-title>
+  
+   
+    </div>
 
   <ion-card button [ngClass]="{'status-alta': atendimentoosfechado.prioridade === 0, 'status-media': atendimentoosfechado.prioridade === 1, 'status-baixa': atendimentoosfechado.prioridade === 2}" *ngFor="let atendimentoosfechado of atendimentososfechados">
     <ion-card-header  routerLink="/cadastro-os/{{atendimentoosfechado.id}}">
