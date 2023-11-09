@@ -27,7 +27,10 @@
 
     <ion-item color="white">
       <ion-label position="floating" color="white">Dispositivo</ion-label>
-      <ion-input formControlName="dispositivo" type="text"></ion-input>
+      <ion-select formControlName="dispositivo" placeholder="Selecione...">
+        <ion-select-option value="ROTEADOR">Roteador</ion-select-option>
+        <ion-select-option value="MODEM">Modem</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item color="white">

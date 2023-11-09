@@ -19,6 +19,13 @@ export class LoginPage implements OnInit {
       this.nav.navigateForward('add-associado')
   }
 
+  ionViewWillEnter(){
+    this.menu.enable(false);
+    }
+    
+    ionViewDidLeave(){
+      this.menu.enable(true);
+      }      
 
   ngOnInit() {
   }

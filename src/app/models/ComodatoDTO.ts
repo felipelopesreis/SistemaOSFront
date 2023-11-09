@@ -1,6 +1,6 @@
 export interface ComodatoDTO{
     id: number;
-    dataInstalacao: string;
+    dataInstalacao: any;
     dataDevolucao: string;
     os:{
         id: number;

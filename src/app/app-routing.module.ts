@@ -79,9 +79,14 @@ const routes: Routes = [
   {
     path: 'cartao-os-fechada',
     loadChildren: () => import('./paginas/home/cartao-os-fechada/cartao-os-fechada.module').then( m => m.CartaoOsFechadaPageModule)
-  },  {
+  },
+  {
     path: 'listagem-equipamento-item',
     loadChildren: () => import('./paginas/menu/equipamento/listagem-equipamento-item/listagem-equipamento-item.module').then( m => m.ListagemEquipamentoItemPageModule)
+  },
+  {
+    path: 'graficos',
+    loadChildren: () => import('./paginas/home/graficos/graficos.module').then( m => m.GraficosPageModule)
   }
 
 
