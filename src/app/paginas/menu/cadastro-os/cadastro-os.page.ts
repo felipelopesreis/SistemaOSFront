@@ -44,6 +44,7 @@ export class CadastroOsPage implements OnInit {
         tipoServico: [response.tipoServico, Validators.required], 
         prioridade: [response.prioridade, Validators.required], 
         status: [response.status, Validators.required], 
+        descricao: [response.descricao, Validators.required],
         cliente: [response.cliente, Validators.required]
       })
     })
@@ -57,6 +58,7 @@ export class CadastroOsPage implements OnInit {
       tipoServico: ['', Validators.required],
       prioridade: ['', Validators.required],
       status: ['', Validators.required],
+      descricao: ['', Validators.required],
       cliente: ['', Validators.required]
     })
   }
@@ -72,6 +74,7 @@ export class CadastroOsPage implements OnInit {
       'tipoServico' : this.ordemServicoForm.value.tipoServico,
       'prioridade': this.ordemServicoForm.value.prioridade,
       'status': this.ordemServicoForm.value.status,
+      'descricao': this.ordemServicoForm.value.descricao,
       'cliente': {
         'id': this.ordemServicoForm.value.cliente
       }

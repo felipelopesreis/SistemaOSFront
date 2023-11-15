@@ -9,6 +9,7 @@ export interface AtendimentoDTO{
 	    tipoServico: number;
 	    prioridade: number;
 	    status: number;
+        descricao: string;
 	    cliente: {
 		    id: number;
 		    nome: string;

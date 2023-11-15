@@ -18,6 +18,8 @@
     <ion-card>
       <ion-card-header>
         <ion-card-title><span>Titulo:</span> {{atendimento.os.titulo}}</ion-card-title>
+    
+
         <ion-card-subtitle><span>Data Abertura:</span> {{atendimento.os.dataAbertura}}</ion-card-subtitle>
         <ion-card-subtitle><span>Data Fechamento:</span> {{atendimento.os.dataFechamento}}</ion-card-subtitle>
         <ion-card-subtitle><span>Categoria:</span> {{atendimento.os.tipoServico}}</ion-card-subtitle>
@@ -27,6 +29,10 @@
         <ion-card-subtitle><span>Técnico:</span> {{atendimento.funcionario.nome}}</ion-card-subtitle>
       </ion-card-header>
     
+      <ion-card-content>
+        <span>Descrição: </span>{{atendimento.os.descricao}}
+        </ion-card-content>
+
       <ion-card-content>
       <span>Relato: </span>{{atendimento.relatoTecnico}}
       </ion-card-content>

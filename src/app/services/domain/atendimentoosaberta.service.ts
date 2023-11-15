@@ -14,6 +14,6 @@ export class AtendimentoOsAbertaService{
     }
 
     findAll(): Observable<AtendimentoOrdemServicoDTO[]>{
-        return this.http.get<AtendimentoOrdemServicoDTO[]>(`${API_CONFIG.baseUrl}/atendimentos/statustecnicosql/1/Sakuragi Hanamich`);
+        return this.http.get<AtendimentoOrdemServicoDTO[]>(`${API_CONFIG.baseUrl}/atendimentos/statustecnicosql/0/Sakuragi Hanamich`);
     }
 }

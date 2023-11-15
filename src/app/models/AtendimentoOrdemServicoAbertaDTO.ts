@@ -4,4 +4,5 @@ export interface AtendimentoOrdemServicoDTO{
     prioridade: number;
     cliente: string;
     nome: string;
+    descricao: string;
 }

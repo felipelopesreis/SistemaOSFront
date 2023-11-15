@@ -6,6 +6,7 @@ export interface OrdemServicoDTO{
 	tipoServico: number;
 	prioridade: number;
 	status: number;
+	descricao: string;
 	cliente: {
 		id: number;
 		nome: string;
